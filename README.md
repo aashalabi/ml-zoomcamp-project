@@ -1,4 +1,4 @@
-# Zoomcamp ML midterm project
+# Zoomcamp ML project
 
 ## Website phishing and scam prediction
 
