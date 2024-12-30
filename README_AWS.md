@@ -36,8 +36,8 @@ python test_lambda_docker.py
     }
     
 
-# AWS Cloud Deployment
-### Deploy to AWS Lambda as Container
+# AWS cloud deployment
+### Deploy to AWS Lambda as container
 
 ### Install AWS cli
 pip install awscli
@@ -101,13 +101,13 @@ docker build -f Dockerfile_lambda -t spam-classifier-images .
 
 ### AWS Lambda function
 
-### Create Lambda Function
+### Create Lambda function
 ```
 Use the image uri to create lambda function from a container
 ```
 ![repo_uri.png](README_AWS_files/repo_uri.png)
 
-### Lambda Function Configuration
+### Lambda function configuration
 ```
 Increase timeout to large amout to accout for loading the model.
 
@@ -160,13 +160,13 @@ https://www.youtube.com/watch?v=nZU9_2bTNTM&ab_channel=MyCloudTutorials
 
 ![api_gateway_resource.png](README_AWS_files/api_gateway_resource.png)
 
-### Test API Gateway to Lambda
+### Test API gateway to Lambda
 ![api_gateway_test.png](README_AWS_files/api_gateway_test.png)
 
-### Deploy API as Public
+### Deploy API as public
 ![api_deploy_public.png](README_AWS_files/api_deploy_public.png)
 
-###  Test Public API
+###  Test public API
 ```
 open test_lambda_gateway.py
 replace url with the <<invoke url>> from deploy api.

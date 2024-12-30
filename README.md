@@ -80,7 +80,7 @@ Docker file: to create docker image
    python test_service.py
 ```
 
-## 6. Build and Run Through Docker
+## 6. Build and run through Docker
 ```
 pipenv --python 3.11
 pipenv install -q scipy
@@ -95,12 +95,12 @@ python test_service.py
 
 ```
 
-## 7. AWS Cloud Impelemntation
+## 7. AWS cloud impelemntation
 
 ## 7.1 Architecure
 ![image-2.png](README_files/image-2.png)
 
-## 7.2 Convert Binary Model to Protocol V4
+## 7.2 Convert binary model to protocol V4
 ```
 It was suggested to used p4 or p5 protocol when saving the model.
 Execute the following to conver the model to v4 protocol
@@ -111,7 +111,7 @@ python p4_bin_convert.py
 
 ###
 
-## 7.3 Detailed AWS Implementation and Depoloyment
+## 7.3 Detailed AWS implementation and depoloyment
 ```
 Check the content of README_AWS.md
 
