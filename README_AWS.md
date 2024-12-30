@@ -18,20 +18,12 @@ docker run -d -p 9696:8080 --name spam-classifier-lambda spam-classifier-lambda:
 #test docker and lmabda service
 python test_lambda_docker.py
 
-{
-  "statusCode": 200,
-  "headers": {
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*"
-  },
-  "body": "{\"Spam_probability\": 0.9996296296296296, \"Spam\": true}"
-}
 ```
 
 
 ```python
 #test docker and lmabda service
-#!python test_lambda_docker.py
+!python test_lambda_docker.py
 ```
 
     {
@@ -45,7 +37,7 @@ python test_lambda_docker.py
     
 
 # AWS Cloud Deployment
-### Deploy to AWS Lambda as container
+### Deploy to AWS Lambda as Container
 
 ### Install AWS cli
 pip install awscli
@@ -110,13 +102,13 @@ docker build -f Dockerfile_lambda -t spam-classifier-images .
 
 ### AWS Lambda function
 
-### Create Lambda function
+### Create Lambda Function
 ```
 Use the image uri to create lambda function from a container
 ```
 ![image.png](README_AWS_files/image.png)
 
-### Lambda function configuration
+### Lambda Function Configuration
 ```
 Increase timeout to large amout to accout for loading the model.
 
@@ -181,19 +173,11 @@ open test_lambda_gateway.py
 replace url with the <<invoke url>> from deploy api.
 run:  python test_lambda_gateway.py
 
-{
-  "statusCode": 200,
-  "headers": {
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*"
-  },
-  "body": "{\"Spam_probability\": 0.9996296296296296, \"Spam\": true}"
-}
 ```
 
 
 ```python
-#python test_lambda_gateway.py
+!python test_lambda_gateway.py
 ```
 
     {

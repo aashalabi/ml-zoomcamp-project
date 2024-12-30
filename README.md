@@ -80,7 +80,7 @@ Docker file: to create docker image
    python test_service.py
 ```
 
-## 6. Build and Run Rhrough Docker
+## 6. Build and Run Through Docker
 ```
 pipenv --python 3.11
 pipenv install -q scipy
