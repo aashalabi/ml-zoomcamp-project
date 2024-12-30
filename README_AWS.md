@@ -14,73 +14,34 @@ docker run -d -p 9696:8080 --name spam-classifier-lambda spam-classifier-lambda:
 
 ### Test Lambda in Docker Container
 
+```
+#test docker and lmabda service
+python test_lambda_docker.py
+
+{
+  "statusCode": 200,
+  "headers": {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*"
+  },
+  "body": "{\"Spam_probability\": 0.9996296296296296, \"Spam\": true}"
+}
+```
+
 
 ```python
 #test docker and lmabda service
-!python test_lambda_docker.py
+#!python test_lambda_docker.py
 ```
 
-    Traceback (most recent call last):
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\urllib3\connection.py", line 174, in _new_conn
-        conn = connection.create_connection(
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\urllib3\util\connection.py", line 95, in create_connection
-        raise err
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
-        sock.connect(sa)
-    ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
-    
-    During handling of the above exception, another exception occurred:
-    
-    Traceback (most recent call last):
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\urllib3\connectionpool.py", line 714, in urlopen
-        httplib_response = self._make_request(
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\urllib3\connectionpool.py", line 415, in _make_request
-        conn.request(method, url, **httplib_request_kw)
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\urllib3\connection.py", line 244, in request
-        super(HTTPConnection, self).request(method, url, body=body, headers=headers)
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\http\client.py", line 1283, in request
-        self._send_request(method, url, body, headers, encode_chunked)
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\http\client.py", line 1329, in _send_request
-        self.endheaders(body, encode_chunked=encode_chunked)
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\http\client.py", line 1278, in endheaders
-        self._send_output(message_body, encode_chunked=encode_chunked)
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\http\client.py", line 1038, in _send_output
-        self.send(msg)
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\http\client.py", line 976, in send
-        self.connect()
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\urllib3\connection.py", line 205, in connect
-        conn = self._new_conn()
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\urllib3\connection.py", line 186, in _new_conn
-        raise NewConnectionError(
-    urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000002658604C280>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
-    
-    During handling of the above exception, another exception occurred:
-    
-    Traceback (most recent call last):
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\requests\adapters.py", line 486, in send
-        resp = conn.urlopen(
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\urllib3\connectionpool.py", line 798, in urlopen
-        retries = retries.increment(
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\urllib3\util\retry.py", line 592, in increment
-        raise MaxRetryError(_pool, url, error or ResponseError(cause))
-    urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=9696): Max retries exceeded with url: /2015-03-31/functions/function/invocations (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002658604C280>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
-    
-    During handling of the above exception, another exception occurred:
-    
-    Traceback (most recent call last):
-      File "D:\code\Zoomcamps\ml-zoomcamp-project\test_lambda_docker.py", line 38, in <module>
-        response = requests.post(url, json=site)
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\requests\api.py", line 115, in post
-        return request("post", url, data=data, json=json, **kwargs)
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\requests\api.py", line 59, in request
-        return session.request(method=method, url=url, **kwargs)
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\requests\sessions.py", line 589, in request
-        resp = self.send(prep, **send_kwargs)
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\requests\sessions.py", line 703, in send
-        r = adapter.send(request, **kwargs)
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\requests\adapters.py", line 519, in send
-        raise ConnectionError(e, request=request)
-    requests.exceptions.ConnectionError: HTTPConnectionPool(host='localhost', port=9696): Max retries exceeded with url: /2015-03-31/functions/function/invocations (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002658604C280>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+    {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      },
+      "body": "{\"Spam_probability\": 0.9996296296296296, \"Spam\": true}"
+    }
     
 
 # AWS Cloud Deployment
@@ -219,39 +180,30 @@ https://www.youtube.com/watch?v=nZU9_2bTNTM&ab_channel=MyCloudTutorials
 open test_lambda_gateway.py
 replace url with the <<invoke url>> from deploy api.
 run:  python test_lambda_gateway.py
+
+{
+  "statusCode": 200,
+  "headers": {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*"
+  },
+  "body": "{\"Spam_probability\": 0.9996296296296296, \"Spam\": true}"
+}
 ```
 
 
 ```python
-!python test_lambda_gateway.py
+#python test_lambda_gateway.py
 ```
 
-    Traceback (most recent call last):
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\requests\models.py", line 434, in prepare_url
-        scheme, auth, host, port, path, query, fragment = parse_url(url)
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\urllib3\util\url.py", line 397, in parse_url
-        return six.raise_from(LocationParseError(source_url), None)
-      File "<string>", line 3, in raise_from
-    urllib3.exceptions.LocationParseError: Failed to parse: https://[wwwwwwwwww].execute-api.us-west-2.amazonaws.com/Test/predict
-    
-    During handling of the above exception, another exception occurred:
-    
-    Traceback (most recent call last):
-      File "D:\code\Zoomcamps\ml-zoomcamp-project\test_lambda_gateway.py", line 39, in <module>
-        response = requests.post(url, json=site)
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\requests\api.py", line 115, in post
-        return request("post", url, data=data, json=json, **kwargs)
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\requests\api.py", line 59, in request
-        return session.request(method=method, url=url, **kwargs)
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\requests\sessions.py", line 575, in request
-        prep = self.prepare_request(req)
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\requests\sessions.py", line 486, in prepare_request
-        p.prepare(
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\requests\models.py", line 368, in prepare
-        self.prepare_url(url, params)
-      File "C:\Users\ahmed\anaconda3\envs\env310\lib\site-packages\requests\models.py", line 436, in prepare_url
-        raise InvalidURL(*e.args)
-    requests.exceptions.InvalidURL: Failed to parse: https://[wwwwwwwwww].execute-api.us-west-2.amazonaws.com/Test/predict
+    {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      },
+      "body": "{\"Spam_probability\": 0.9996296296296296, \"Spam\": true}"
+    }
     
 
 
