@@ -47,13 +47,13 @@ pip install pipenv
 
 ```
 
-## 3 Data
+## 3. Data
 ```
 Data is download from the URL https://archive.ics.uci.edu/dataset/327/phishing+websites
 
 ```
 
-## 4 Notebookas and included files
+## 4. Notebooks and included files
 ```
 ml_project.ipynb :  contains 
                         - Data preparation and data cleaning
@@ -66,19 +66,21 @@ test_service: test the flash app
 Docker file: to create docker image
 ```
 
-## Instructions on how to run the project
+## 5. Instructions on how to run the project
 ```
 1- create the env as in (2)
 2- activate the environment
    conda activate ml-zoomcamp
-3- run flask backend service
+3- Clone the repo
+   https://github.com/aashalabi/ml-zoomcamp-project.git
+4- run flask backend service
     waitress-serve --port=9696 app:app
-4- Run predict test, open new cmd window , activate the env
+5- Run predict test, open new cmd window , activate the env
    conda activate ml-zoomcamp
    python test_service.py
 ```
 
-### Build and run through Docker
+## 6. Build and Run Rhrough Docker
 ```
 pipenv --python 3.11
 pipenv install -q scipy
@@ -90,6 +92,28 @@ pipenv install flask
 docker build --no-cache -t site_spam_predict:1.0 .
 docker run -d -p 9696:9696 --name site_spam_predict site_spam_predict:1.0
 python test_service.py
+
+```
+
+## 7. AWS Cloud Impelemntation
+
+## 7.1 Architecure
+![image-2.png](README_files/image-2.png)
+
+## 7.2 Convert Binary Model to Protocol V4
+```
+It was suggested to used p4 or p5 protocol when saving the model.
+Execute the following to conver the model to v4 protocol
+
+python p4_bin_convert.py
+```
+
+
+###
+
+## 7.3 Detailed AWS Implementation and Depoloyment
+```
+Check the content of README_AWS.md
 
 ```
 
