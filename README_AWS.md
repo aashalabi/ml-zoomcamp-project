@@ -46,7 +46,7 @@ pip install awscli
 
 aws ecr create-repository --repository-name spam-classifier-images
 
-![image.png](README_AWS_files/image.png)
+![ecr_repo.png](README_AWS_files/ecr_repo.png)
 
 
 
@@ -97,8 +97,7 @@ For image build use the following docker command:
 
 docker build -f Dockerfile_lambda -t spam-classifier-images .
 
-
-![image.png](README_AWS_files/image.png)
+![ecr_push_commands.png](README_AWS_files/ecr_push_commands.png)
 
 ### AWS Lambda function
 
@@ -106,7 +105,7 @@ docker build -f Dockerfile_lambda -t spam-classifier-images .
 ```
 Use the image uri to create lambda function from a container
 ```
-![image.png](README_AWS_files/image.png)
+![repo_uri.png](README_AWS_files/repo_uri.png)
 
 ### Lambda Function Configuration
 ```
@@ -150,8 +149,8 @@ Create test:
 ```
 
 ### Run the test inside the lambda function
-![image.png](README_AWS_files/image.png)
 
+![repo_lambda_test.png](README_AWS_files/repo_lambda_test.png)
 
 #### Youtube help
 
@@ -159,13 +158,13 @@ https://www.youtube.com/watch?v=nZU9_2bTNTM&ab_channel=MyCloudTutorials
 
 ### Create API Gateway
 
-![image-2.png](README_AWS_files/image-2.png)
+![api_gateway_resource.png](README_AWS_files/api_gateway_resource.png)
 
 ### Test API Gateway to Lambda
-![image.png](README_AWS_files/image.png)
+![api_gateway_test.png](README_AWS_files/api_gateway_test.png)
 
 ### Deploy API as Public
-![image.png](README_AWS_files/image.png)
+![api_deploy_public.png](README_AWS_files/api_deploy_public.png)
 
 ###  Test Public API
 ```
